@@ -10,7 +10,3 @@ summary_phyloseq <- function(physeq) {
   return(summary_stats)
 }
 
-summary_stats <- summary_phyloseq()
-
-# Check the summary statistics
-head(summary_stats)
