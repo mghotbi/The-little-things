@@ -1,5 +1,5 @@
 #summary based on ASV_ID
-summary_phyloseq <- function(physeq) {
+ASV_summary_phyloseq <- function(physeq) {
   otu_table <- otu_table(physeq)
   summary_stats <- data.frame(
     ASV_ID = rownames(otu_table),
@@ -13,7 +13,7 @@ summary_phyloseq <- function(physeq) {
 
 
 #summary based on Sample_ID
-summ_phyloseq <- function(physeq) {
+Sample_summary_phyloseq <- function(physeq) {
   otu_table <- otu_table(physeq)
   summary_stats <- data.frame(
     Sample_ID = colnames(otu_table),
