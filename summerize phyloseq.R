@@ -12,7 +12,7 @@ summary_phyloseq <- function(physeq) {
 }
 
 
-#summary based on sample_id
+#summary based on Sample_ID
 summ_phyloseq <- function(physeq) {
   otu_table <- otu_table(physeq)
   summary_stats <- data.frame(
