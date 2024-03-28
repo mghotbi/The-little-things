@@ -22,12 +22,12 @@ tidy_phyloseq <- function(my_phyloseq) {
     
     # Check for and remove "Chloroplast" entries in Class
     if ("Class" %in% colnames(tax_table(my_phyloseq))) {
-      my_phyloseq <- prune_taxa(taxa_names(my_phyloseq)[tax_table(my_phyloseq)[, "Class"] != " Chloroplast"], my_phyloseq)
+      my_phyloseq <- prune_taxa(taxa_names(my_phyloseq)[tax_table(my_phyloseq)[, "Class"] != "Chloroplast"], my_phyloseq)
     }
     
     # Check for and remove "Mitochondria" entries in Family
     if ("Family" %in% colnames(tax_table(my_phyloseq))) {
-      my_phyloseq <- prune_taxa(taxa_names(my_phyloseq)[tax_table(my_phyloseq)[, "Family"] != " Mitochondria"], my_phyloseq)
+      my_phyloseq <- prune_taxa(taxa_names(my_phyloseq)[tax_table(my_phyloseq)[, "Family"] != "Mitochondria"], my_phyloseq)
     }
   }
   
