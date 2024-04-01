@@ -15,12 +15,17 @@ tidy_phyloseq <- function(my_phyloseq) {
   }
   # Replace NA in Phylum with "Unidentified"
   tax_table(my_phyloseq)[is.na(tax_table(my_phyloseq)[, "Phylum"]), "Phylum"] <- "Unidentified"
+  
   # Remove taxa with zero counts
   if (ntaxa(my_phyloseq) > 0) {
     my_phyloseq <- prune_taxa(taxa_sums(my_phyloseq) > 0, my_phyloseq)
-    # Rename taxa names with ASV numbers
-    taxa_names(my_phyloseq) <- paste0("ASV", seq(ntaxa(my_phyloseq)))
   }
+  
+  # Remove taxa classified as "Chloroplast" at the Class level
+  my_phyloseq <- subset_taxa(my_phyloseq, Class != "Chloroplast")
+  
+  # Remove taxa classified as "Mitochondria" at the Family level
+  my_phyloseq <- subset_taxa(my_phyloseq, Family != "Mitochondria")
   
   return(my_phyloseq)
 }
