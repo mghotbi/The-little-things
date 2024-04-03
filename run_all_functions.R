@@ -9,4 +9,4 @@ run_all_functions <- function(directory) {
   }
 }
 
-#run_all_functions("G:/My Drive/GitHub/Spike_In_mixed_volume")
+#run_all_functions("G:/My Drive/GitHub/")
